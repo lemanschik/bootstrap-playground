@@ -414,8 +414,8 @@ export function activate(context: vscode.ExtensionContext) {
     const extname = (pathname) => hasExt(pathname) && pathname.slice(pathname.lastIndexOf('.'));
     const fsPath = (pathname) => Uri.parse(`memfs: ${pathname}`);
 
-    const seedFromCache = () => caches.open(import.meta.url).then(async (cache) => {
-      cache.matchAll("/", { ignoreSearch: true }).then((responses) => {
+    const seedFromCache = (updatePathname="/") => caches.open(import.meta.url).then(async (cache) => {
+      cache.matchAll(updatePathname, { ignoreSearch: true }).then((responses) => {
         for (const response of responses) { const { pathname } = new URL(response.url);
           hasExt(filename(pathname)) && memFs.createDirectory(fsPath(dirname(pathname))) &&
           memFs.writeFile( 
@@ -426,7 +426,8 @@ export function activate(context: vscode.ExtensionContext) {
         }
       });
     });
-
+    const cacheChannel = new BroadcastChannel(import.meta.url);
+    cacheChannel.onmessage = ({ data }) => seedFromCache
 		enableProblems(context);
 		enableTasks();
 
