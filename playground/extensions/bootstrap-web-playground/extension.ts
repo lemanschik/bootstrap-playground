@@ -400,6 +400,10 @@ function randomData(lineCnt: number, lineLen = 155): Uint8Array {
 	return textEncoder.encode(lines.join('\n'));
 }
 
+/** 
+ * Extension                                 
+ */
+
 // Extension
 
 declare const navigator: unknown;
@@ -426,11 +430,13 @@ export function activate(context: vscode.ExtensionContext) {
         }
       });
     });
+    
     const cacheChannel = new BroadcastChannel(import.meta.url);
-    cacheChannel.onmessage = ({ data }) => seedFromCache
+    cacheChannel.onmessage = ({ data }) => seedFromCache(data);
 		enableProblems(context);
 		enableTasks();
-
+    seedFromCache();
+    
 		vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`memfs:/sample-folder/large.ts`));
 	}
 }
