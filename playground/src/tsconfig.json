@@ -1,0 +1,18 @@
+{
+  "references": [
+    { "path": "../", "prepend": true }
+  ],
+  "compilerOptions": {
+    "declartion": false,
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "experimentalDecorators": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"allowUnreachableCode": false,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"]
+  }
+}
