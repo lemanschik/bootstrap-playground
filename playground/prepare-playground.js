@@ -28,3 +28,4 @@ if (fs.existsSync("../../code-oss-web")) {
 // /code-oss-web
 fs.mkdirSync("../../code-oss-web");
 fse.copySync("../vscode-web", "../../code-oss-web");
+fse.copySync("../extensions", "../../code-oss-web/extensions");
