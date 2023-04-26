@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declartion": false,
+    "composite": true,
     "outDir": "code-oss-web/extensions/bootstrap-playground"
     "module": "amd",
     "moduleResolution": "node",
