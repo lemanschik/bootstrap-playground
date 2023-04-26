@@ -1,7 +1,7 @@
 {
-  "name": "vscode-web-playground",
-  "description": "Web playground for VS Code",
-  "version": "0.0.13",
+  "name": "bootstrap-web-playground",
+  "description": "Bootstrap Web playground based on Code OSS",
+  "version": "0.1.0",
   "publisher": "vscode",
   "license": "MIT",
   "enabledApiProposals": [
@@ -13,7 +13,7 @@
     "onFileSystem:memfs",
     "onDebug"
   ],
-  "browser": "./src/playground.js",
+  "browser": "./extension.js",
   "engines": {
     "vscode": "^1.48.0"
   },
