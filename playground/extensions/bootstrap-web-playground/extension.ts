@@ -6,7 +6,26 @@ declare const navigator: unknown;
 export function activate(context: vscode.ExtensionContext) {
 	if (typeof navigator === 'object') {	// do not run under node.js
 		const memFs = enableFs(context);
-		memFs.seed();
+		
+    const dirname = (pathname) => pathname.slice(0,pathname.lastIndexOf('/'));
+    const filename = (pathname) => pathname.slice(pathname.lastIndexOf('/')+1);
+    const hasExt = (filename) => filename.indexOf('.') > -1);
+    const extname = (pathname) => hasExt(pathname) && pathname.slice(pathname.lastIndexOf('.'));
+    const fsPath = (pathname) => Uri.parse(`memfs: ${pathname}`);
+
+    const seedFromCache = () => caches.open(import.meta.url).then(async (cache) => {
+      cache.matchAll("/", { ignoreSearch: true }).then((responses) => {
+        for (const response of responses) { const { pathname } = new URL(response.url);
+          hasExt(filename(pathname)) && memFs.createDirectory(fsPath(dirname(pathname))) &&
+          memFs.writeFile( 
+            fsPath(new URL(response.url).pathname),
+            await response.body.arrayBuffer(),
+            { create: true, overwrite: true }
+          );
+        }
+      });
+    });
+
 		enableProblems(context);
 		enableTasks();
 
