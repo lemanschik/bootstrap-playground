@@ -1,1 +1,25 @@
-{ "compilerOptions": { "outDir": "extensions/bootstrap-playground" }}
+{
+  "compilerOptions": {
+    "outDir": "code-oss-web/extensions/bootstrap-playground"
+    "module": "amd",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"allowUnreachableCode": false,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "vs/*": [
+                "./code-oss/src/vs/*"
+            ], 
+            "vs/code/browser/workbench/workbench.ts": "./workbench.ts"
+        },
+        "lib": [
+			"ESNext"
+		]
+    },
+    "include": ["workbench.ts"]
+}
+
