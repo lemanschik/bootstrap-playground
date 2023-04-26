@@ -1,4 +1,11 @@
 {
+  "references": [
+   { "path": "./src" }
+  ],
+  "include": [
+    "./extensions/bootstrap-web-playground/extension.ts",
+    "./workbench.ts",
+  ],
   "compilerOptions": {
     "declartion": false,
     "composite": true,
@@ -18,9 +25,7 @@
             ], 
             "vs/code/browser/workbench/workbench.ts": "./workbench.ts"
         },
-        "lib": [
-			"ESNext"
-		]
+        "lib": ["ESNext"]
     },
     "include": ["workbench.ts"]
 }
