@@ -1,0 +1,18 @@
+{	"productConfiguration": {
+		"nameShort": "Bootstrap Playground",
+		"nameLong": "Bootstrap Web Playground",
+		"applicationName": "bootstrap-web-playground",
+		"dataFolderName": ".code-oss-web",
+		"version": "1.75.0",
+		"extensionEnabledApiProposals": {
+			"vscode.vscode-web-playground": [
+				"fileSearchProvider",
+				"textSearchProvider"
+			]
+		}
+  },
+  "folderUri": {"scheme": "memfs","path": "/"},
+	"additionalBuiltinExtensions": [{
+			"scheme": "http","path": "/extensions/bootstrap-web-playground"
+	}]
+}
