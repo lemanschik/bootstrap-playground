@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { MemFS } from './memfs';
+import { MemFS } from './memfs.ts';
 
 declare const navigator: unknown;
 
