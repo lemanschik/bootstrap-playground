@@ -1,6 +1,7 @@
+import { largeTSFile, getImageFile, debuggableFile, windows1251File, gbkFile } from './exampleFiles.ts';
 const seed = (fs) => {
 
-this.createDirectory(Uri.parse(`memfs:/sample-folder/`));
+    fs.createDirectory(Uri.parse(`memfs:/sample-folder/`));
 
 		// most common files types
 		fs.writeFile(Uri.parse(`memfs:/sample-folder/large.ts`), textEncoder.encode(largeTSFile), { create: true, overwrite: true });
