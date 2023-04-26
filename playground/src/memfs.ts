@@ -25,7 +25,7 @@ import {
 	Uri,
 	workspace,
 } from 'vscode';
-import { largeTSFile, getImageFile, debuggableFile, windows1251File, gbkFile } from './exampleFiles';
+
 
 export class File implements FileStat {
 
