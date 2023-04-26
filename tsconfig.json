@@ -1,6 +1,6 @@
 {
   "references": [
-   { "path": "./src" }, { "path": "./code-oss" }
+   { "path": "./code-oss" }
   ],
   "include": [
     "./extensions/bootstrap-web-playground/extension.ts",
